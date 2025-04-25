@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma'
+import { UsersRepository } from '@/repositories/users.repository'
 import { hash } from 'bcryptjs'
 
 interface RegisterUseCaseRequest {
@@ -11,7 +12,7 @@ interface RegisterUseCaseRequest {
 // D - Dependency Inversion Principle
 
 export class RegisterUseCase {
-  constructor(private usersRepository: any) { }
+  constructor(private usersRepository: UsersRepository) { }
 
   async execute({ email, name, password }: RegisterUseCaseRequest) {
     const SALT_ROUNDS = 6

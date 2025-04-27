@@ -52,7 +52,7 @@ describe('Register Use Case', () => {
 
     // Resolve / Reject
 
-    expect(() =>
+    await expect(() =>
       registerUseCase.execute({
         name: 'John Doe',
         email,

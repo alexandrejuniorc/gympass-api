@@ -27,11 +27,7 @@ export default <Environment>{
     const schema = randomUUID()
     const databaseURL = generateDatabaseUrl(schema)
 
-    console.log('LATEST DATABASE URL:', process.env.DATABASE_URL)
-
     process.env.DATABASE_URL = databaseURL
-
-    console.log('NEWEST DATABASE URL:', process.env.DATABASE_URL)
 
     execSync('pnpm prisma migrate deploy')
 

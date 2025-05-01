@@ -6,11 +6,11 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 
 describe('Register Controller', () => {
   beforeAll(async () => {
-    // Garante que a aplicação tenha sido inicializada
+    // Ensure the application has been initialized
     await app.ready()
   })
   afterAll(async () => {
-    // Fecha a aplicação após os testes
+    // Ensure the application is closed after the tests
     await app.close()
   })
 

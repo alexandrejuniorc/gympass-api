@@ -4,7 +4,7 @@ import { app } from '@/app'
 import request from 'supertest'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 
-describe('Authenticate Controller', () => {
+describe('Authenticate Controller (E2E)', () => {
   beforeAll(async () => {
     // Ensure the application has been initialized
     await app.ready()

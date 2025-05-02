@@ -3,12 +3,13 @@ import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
 
 export async function nearby(request: FastifyRequest, reply: FastifyReply) {
+  // the localization needs use coerce to convert the string to a number, because all query params are strings
   const nearbyGymsQuerySchema = z.object({
-    latitude: z.number().refine((value) => {
+    latitude: z.coerce.number().refine((value) => {
       const isValidLatitude = Math.abs(value) <= 90
       return isValidLatitude
     }),
-    longitude: z.number().refine((value) => {
+    longitude: z.coerce.number().refine((value) => {
       const isValidLongitude = Math.abs(value) <= 180
       return isValidLongitude
     }),

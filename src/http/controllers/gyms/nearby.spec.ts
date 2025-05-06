@@ -16,7 +16,7 @@ describe('Nearby Gyms Controller (E2E)', () => {
   })
 
   it('should be able to list nearby gyms', async () => {
-    const { token } = await createAndAuthenticateUser(app)
+    const { token } = await createAndAuthenticateUser(app, true)
 
     // Near Gym
     await request(app.server)

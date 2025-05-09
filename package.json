@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "tsx watch src/server.ts",
-    "start": "node build/server.js",
+    "start": "node dist/server.js",
     "test:create-prisma-environment": "pnpm link ./prisma/vitest-environment-prisma",
     "test:install-prisma-environment": "pnpm link vitest-environment-prisma",
-    "build": "tsup src --out-dir build",
+    "build": "tsup src",
     "test": "vitest run --project UNIT",
     "test:watch": "vitest --project UNIT",
     "pretest:e2e": "run-s test:create-prisma-environment test:install-prisma-environment",
